@@ -1,0 +1,189 @@
+:root {
+    --primary-color: #007b7f;
+    --secondary-color: #00cba9;
+    --text-color: #333;
+    --bg-color: #fff;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Estilos Gerais (para desktop/telas grandes) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Links lado a lado em telas grandes */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar a:hover {
+    color: white;
+    text-decoration: underline;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* Oculta o botão de toggle por padrão em telas grandes */
+.toggle-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* --- Estilos para Telas Pequenas (Responsividade) --- */
+@media (min-width: 300px) and (max-width: 448px) {
+    .toggle-button {
+        display: block;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        max-height: 300px; /* Um valor grande o suficiente para mostrar todo o conteúdo */
+        /* Outra opção é usar display: block/flex; quando ativo e display: none; quando inativo,
+           mas max-height/overflow: hidden permite uma animação mais agradável. */
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+        background-color: var(--secondary-color);
+        border-radius: 5px;
+        width: 55%;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 449px) and (max-width: 1280px) {
+    .toggle-button {
+        display: block;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        max-height: 300px; /* Um valor grande o suficiente para mostrar todo o conteúdo */
+        /* Outra opção é usar display: block/flex; quando ativo e display: none; quando inativo,
+           mas max-height/overflow: hidden permite uma animação mais agradável. */
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+        background-color: var(--secondary-color);
+        border-radius: 5px;
+        width: 75%;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}
