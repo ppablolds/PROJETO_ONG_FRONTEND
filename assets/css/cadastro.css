@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #007b7f;
+    --secondary-color: #00cba9;
+    --text-color: #333;
+    --bg-color: #fff;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Estilos Gerais (para desktop/telas grandes) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Links lado a lado em telas grandes */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar a:hover {
+    color: white;
+    text-decoration: underline;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* Oculta o botão de toggle por padrão em telas grandes */
+.toggle-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #007b7f;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #007b7f;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    background-color: #007b7f;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00cba9;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* --- Estilos para Telas Pequenas (Responsividade) --- */
+@media (min-width: 300px) and (max-width: 448px) {
+    .toggle-button {
+        display: block;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        max-height: 300px; /* Um valor grande o suficiente para mostrar todo o conteúdo */
+        /* Outra opção é usar display: block/flex; quando ativo e display: none; quando inativo,
+           mas max-height/overflow: hidden permite uma animação mais agradável. */
+    }
+}
