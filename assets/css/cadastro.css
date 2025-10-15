@@ -113,7 +113,7 @@ input:focus {
     outline: none;
 }
 
-button {
+.submit {
     width: 100%;
     background-color: #007b7f;
     color: #fff;
@@ -125,7 +125,7 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+.submit:hover {
     background-color: #00cba9;
 }
 
