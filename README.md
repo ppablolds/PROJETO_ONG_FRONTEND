@@ -9,16 +9,12 @@ Plataforma web desenvolvida com HTML5, CSS3 e JavaScript puro para gestão de ON
 │
 ├── index.html
 ├── /pages
-│   ├── about.html
 │   ├── projects.html
-│   ├── volunteers.html
-│   ├── donations.html
-│   └── blog.html
+│   └── cadastro.html
 ├── /assets
 │   ├── /css/style.css
 │   ├── /js/main.js
-│   ├── /images
-│   └── /docs
+│   └── /img
 └── README.md
 ```
 
